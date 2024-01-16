@@ -30,7 +30,9 @@ class MsalAuthService {
             "email",
             "profile",
             "offline_access",
-            "User.Read"
+            "User.Read",
+            "Mail.Read",
+            "Files.Read",
         ];
 
         const authRequest = {

@@ -49,6 +49,20 @@ module.exports.setup = function (app) {
     res.render('browser-redirect', { clientId: clientId, applicationIdUri: applicationIdUri });
   });
 
+  app.post('/getToken', function(req, res) {
+    msalClient.acquireTokenOnBehalfOf({
+      authority: `https://login.microsoftonline.com/${req.body.tid}`,
+      oboAssertion: req.body.token,
+      scopes: req.body.scopes,
+      skipCache: false
+    }).then(function (result) {
+      res.json(result);
+    }, function (err) {
+      console.log(err); // Error: "It broke"
+      res.json(err);
+    });
+  })
+
   // On-behalf-of token exchange
   app.post('/getProfileOnBehalfOf', function (req, res) {
     var tid = req.body.tid;

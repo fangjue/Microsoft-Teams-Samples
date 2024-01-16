@@ -23,6 +23,14 @@
                 {
                     "id": "User.Read",
                     "type": "Scope"
+                },
+                {
+                    "id": "Mail.Read",
+                    "type": "Scope"
+                },
+                {
+                    "id": "Files.Read",
+                    "type": "Scope"
                 }
             ]
         }

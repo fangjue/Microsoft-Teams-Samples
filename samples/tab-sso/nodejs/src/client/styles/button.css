@@ -17,3 +17,7 @@ body {
 .browser-button:hover {
     background-color: #7A80EB;
 }
+
+pre {
+    white-space: pre-line;
+}
